@@ -17,6 +17,9 @@ BODY {
     /* centre le texte */
 
 }
+#pub-page-principal {
+	margin-top: 300px;
+}
 header{
 	list-style: none;
 	position: fixed;
