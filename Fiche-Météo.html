@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- l'en-tête -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>SurFrance.bzh</title>
+
+</head>
+
+<body>
+
+	<header>
+		<a  class="logo">SurFrance</a>
+		<nav>
+			<ul class="navlist">
+				<a href="SurfFrance.html">Acceuil</a>
+				<a href="Fiche-webcam.html">Webcam</a>
+				<a href="Fiche-Météo.html">Météo</a>
+				<a href="fichemagasin.html">Shop</a>
+				<a href="contact.html">Profil</a>
+			</ul>
+		</nav>
+		<div class="nav-right">
+			<a href="#"><i class="ri-search-line"></i></a>
+			<a href="#"><i class="ri-shopping-cart-line"></i></a>
+			<li><a href="#" class="fa-solid fa-user"></a></li>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+	    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+	<div id="corps">
+		<h1>Heure actuelle</h1>
+		<div id="horloge"></div>
+
+    <script>
+        function afficherHeure() {
+            const maintenant = new Date();
+            const heures = String(maintenant.getHours()).padStart(2, '0');
+            const minutes = String(maintenant.getMinutes()).padStart(2, '0');
+            const secondes = String(maintenant.getSeconds()).padStart(2, '0');
+            document.getElementById('horloge').textContent = `${heures}:${minutes}:${secondes}`;
+        }
+
+        // Mettre à jour l'heure toutes les secondes
+        setInterval(afficherHeure, 1000);
+
+        // Afficher l'heure immédiatement au chargement
+        afficherHeure();
+    </script>
+	
+	<p>Notre réseau de stations météo offre une couverture étendue et précise pour suivre les conditions climatiques locales en temps réel. Grâce à un déploiement stratégique de stations connectées, nous collectons des données essentielles telles que la température, la taille des vagues, leur période et la vitesse du vent. Ce réseau présente de nombreux avantages pour les surfeurs, et les voileurs.</p>
+	<div id="titre-des-spot-en-bretagne">
+	
+		<h3>
+		Prévision des spot en Bretagne
+		</h3>
+	<div id="liste-des-spot-en-bretagne1">
+		<a href="https://www.windguru.cz/48481" title="Sainte-Barbes">Saintes-Barbes</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne2">
+		<a href="https://www.windguru.cz/48482" title="Les Crevettes">Les Crevettes</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne3">	
+		<a href="https://www.windguru.cz/18" title="Quiberon Côte Sauvage">Quiberon Côte Sauvage</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne4">
+		<a href="https://www.windguru.cz/48472" title="Fort Bloqué">Fort Bloqué</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne5">
+		<a href="https://www.windguru.cz/48471" title="Quidel">Quidel</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne6">
+		<a href="https://www.windguru.cz/218" title="La torche">La torche</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne7">
+		<a href="https://www.windguru.cz/48481" title="Sainte-Barbes">Saintes-Barbes</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne8">
+		<a href="https://www.windguru.cz/500929" title="Plage de tronoen">Plage de tronoen</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne9">
+		<a href="https://www.windguru.cz/48463" title="Plage de penhors">Plage de penhors</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne10">
+		<a href="https://www.windguru.cz/48453" title="La Palue">La palue</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne11">
+		<a href="https://www.windguru.cz/500914" title="Perros Guirec">Perros Guirec</a>
+	</div>
+	
+	
+	
+		<h3>
+		Prévision des spot en France
+		</h3>
+	<div id="liste-des-spot-en-bretagne1">
+		<a href="https://www.windguru.cz/309513" title="Hossegor">Hossegor</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne2">
+		<a href="https://www.windguru.cz/48571" title="Cap-Breton">Cap-Breton</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne3">	
+		<a href="https://www.windguru.cz/4168" title="Cap-Feret">Cap-Feret</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne4">
+		<a href="https://www.windguru.cz/321012" title="Vieux-Boucau">Vieux-Boucau</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne5">
+		<a href="https://www.windguru.cz/15" title="Biarritz">Biarritz</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne6">
+		<a href="https://www.windguru.cz/500963" title="Saint-Jean-de-luz">Saint-Jean-de-luz</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne7">
+		<a href="https://www.windguru.cz/48397" title="Biville">Biville</a>
+	</div>
+	<div id="liste-des-spot-en-bretagne8">
+		<a href="https://www.windguru.cz/208791" title="téahupoo">teahupoo</a>
+	</div>
+
+	
+	
+	<div id="footer2">
+	<p>©SurFrance2024</p>
+	<div id="footer2">
+	
+	
+	<style type="text/css">
+		body{
+			background-image: url("photosurf31.png");
+		}
+		
+<video>src="https://ds1-cache.quanteec.com/contents/encodings/live/7c93e373-f5f8-4002-3232-3430-6d61-63-becf-24420c3defe3d/poster.jpg"</video>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
