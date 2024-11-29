@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo à Plomeur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            margin-top: 1200px; /* Ajuster la marge pour centrer correctement */
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1200px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prévisions météorologiques à Plomeur (La Torche)</h1>
+        <table id="weather-table">
+            <thead>
+                <tr>
+                    <th>Heure</th>
+                    <th>Température (°C)</th>
+                    <th>Description</th>
+                    <th>Vitesse du Vent (m/s)</th>
+                    <th>Direction du Vent (°)</th>
+                    <th>Humidité (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="6" id="loading">Chargement des prévisions...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const apiKey = "d518ee1f87290e7100d335782f048bd5"; // Votre clé API
+        const city = "Plomeur"; // Changer la ville ici
+        const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},fr&units=metric&lang=fr&appid=${apiKey}`;
+
+        async function fetchWeather() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error("Impossible de récupérer les données météo.");
+                const data = await response.json();
+                
+                const forecastList = data.list; // Liste des prévisions toutes les 3 heures
+                const tableBody = document.getElementById("weather-table").getElementsByTagName('tbody')[0];
+                
+                // On vide la ligne de chargement
+                tableBody.innerHTML = "";
+
+                // On parcourt les prévisions horaire
+                forecastList.forEach((forecast) => {
+                    const date = new Date(forecast.dt * 1000);
+                    const hour = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+                    const day = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+
+                    const row = tableBody.insertRow();
+
+                    row.innerHTML = `
+                        <td>${day} ${hour}
+                        <td>${forecast.main.temp} °C
+                        <td>${forecast.weather[0].description}
+                        <td>${forecast.wind.speed} m/s
+                        <td>${forecast.wind.deg}°
+                        <td>${forecast.main.humidity} %
+                    `;
+                });
+            } catch (error) {
+                document.getElementById("loading").innerHTML = `<span class="error">${error.message}`;
+            }
+        }
+
+        fetchWeather();
+    </script>
+</body>
+</html>
