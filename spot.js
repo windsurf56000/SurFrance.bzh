@@ -1,7 +1,7 @@
 		function getSiteByCity(city) {
             const sitesDatabase = {
-                "vannes": "meteohossegor.html",
-                "la torche": "LaTorche.html",
+                "vannes": "meteospot/meteohossegor.html",
+                "la torche": "meteospot/LaTorche.html",
                 "nice": "https://www.nicetourisme.com",
                 "lyon": "https://www.lyon-france.com",
                 "bordeaux": "https://www.bordeaux-tourisme.com"
