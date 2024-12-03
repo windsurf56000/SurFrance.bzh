@@ -1,0 +1,27 @@
+		function getSiteByCity(city) {
+            const sitesDatabase = {
+                "vannes": "meteohossegor.html",
+                "la torche": "LaTorche.html",
+                "nice": "https://www.nicetourisme.com",
+                "lyon": "https://www.lyon-france.com",
+                "bordeaux": "https://www.bordeaux-tourisme.com"
+                // Ajoutez d'autres villes ici
+            };
+            return sitesDatabase[city.toLowerCase()] || null;
+        }
+
+        function searchCity() {
+            const cityInput = document.getElementById("cityInput").value.trim().toLowerCase();
+            const siteUrl = getSiteByCity(cityInput);
+
+            const errorDiv = document.getElementById("error");
+            errorDiv.textContent = ""; // Réinitialiser les messages d'erreur
+
+            if (siteUrl) {
+                // Redirige directement vers le site
+                window.location.href = siteUrl;
+            } else {
+                // Affiche une erreur si la ville n'est pas trouvée
+                errorDiv.textContent = "";
+            }
+        }
