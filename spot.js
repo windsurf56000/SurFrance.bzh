@@ -1,4 +1,4 @@
-	function getSiteByCity(city) {
+r	function getSiteByCity(city) {
             const sitesDatabase = {
                 "vannes": "meteohossegor.html",
                 "la torche": "LaTorche.html",
@@ -23,6 +23,6 @@
                 window.location.href = siteUrl;
             } else {
                 // Affiche une erreur si la ville n'est pas trouvée
-                errorDiv.textContent = "";
+                errorDiv.textContent = "error";
             }
         }
