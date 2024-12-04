@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Météo à Crozon</title>
+    <title>Surfrance</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -302,7 +302,7 @@
 				<span class="close" onclick="closeModal()">&times;</span>
 				<p>Dernière mise à jour il y a 2 heure</p>
 				<h2>Parametre</h2>
-				<p>Météo à Crozon fournis grace a des données extremement precis avec des prevision jusqu'a 4 jour</p>
+				<p>Météo à La Torche fournis grace a des données extremement precis avec des prevision jusqu'a 4 jour</p>
 			</div>
 		</div>
 
@@ -377,8 +377,8 @@
         function sharePage() {
             if (navigator.share) {
                 navigator.share({
-                    title: 'Météo à Crozon',
-                    text: 'Découvrez les prévisions météorologiques à Crozon !',
+                    title: 'Météo La Torche',
+                    text: 'Découvrez les prévisions météorologiques à La Torche !',
                     url: window.location.href,
                 }).catch((error) => console.error('Erreur de partage', error));
             } else {
@@ -616,7 +616,7 @@
 		
 		async function updateTemperature() {
 			const apiKey = "d518ee1f87290e7100d335782f048bd5"; // Remplacez par votre clé API
-			const city = "Crozon"; // Nom de la ville
+			const city = "plomeur"; // Nom de la ville
 			const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=fr`;
 
 			try {
