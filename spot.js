@@ -5,6 +5,7 @@
                 "crozon": "meteocrozon.html",
                 "biarritz": "meteobiarritz.html",
                 "lorient": "meteolorient.html"
+		"guidel": "meteoguidel.html"
                 // Ajoutez d'autres villes ici
             };
             return sitesDatabase[city.toLowerCase()] || null;
