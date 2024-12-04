@@ -4,7 +4,7 @@ r	function getSiteByCity(city) {
                 "la torche": "LaTorche.html",
                 "crozon": "meteocrozon.html",
                 "biarritz": "meteobiarritz.html",
-                "lorient": "meteolorient.html"
+                "lorient": "meteolorient.html",
 		"guidel": "meteoguidel.html"
                 // Ajoutez d'autres villes ici
             };
