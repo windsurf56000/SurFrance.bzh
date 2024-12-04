@@ -3,7 +3,7 @@
                 "vannes": "meteohossegor.html",
                 "la torche": "LaTorche.html",
                 "crozon": "meteocrozon.html",
-                "lyon": "https://www.lyon-france.com",
+                "biarritz": "meteobiarritz.html",
                 "bordeaux": "https://www.bordeaux-tourisme.com"
                 // Ajoutez d'autres villes ici
             };
