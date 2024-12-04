@@ -23,6 +23,6 @@ r	function getSiteByCity(city) {
                 window.location.href = siteUrl;
             } else {
                 // Affiche une erreur si la ville n'est pas trouvée
-                errorDiv.textContent = "error";
+                errorDiv.textContent = "";
             }
         }
