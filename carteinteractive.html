@@ -17,10 +17,22 @@
       height: 100vh; /* Carte prend toute la hauteur de l'écran */
       width: 100%;  /* Carte prend toute la largeur */
     }
+	.overlay-button {
+		position: absolute;
+		z-index: 9999;
+		margin-top: 80px;
+		padding: 2px 20px;
+		font-size: 14px;
+		border-radius: 5px;
+	}
+	
+	.overlay-button:hover {
+	      background-color: #777f89;
+	 }
   </style>
 </head>
 <body>
-
+<button class="overlay-button" onclick="goBack()">Retour</button>
   <!-- Conteneur pour la carte -->
   <div id="map"></div>
 
