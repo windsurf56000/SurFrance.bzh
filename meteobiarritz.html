@@ -342,7 +342,7 @@
 
     <script>
         const apiKey = "d518ee1f87290e7100d335782f048bd5"; // Votre clé API
-        const city = "Crozon"; // Changer la ville ici
+        const city = "biarritz"; // Changer la ville ici
         const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},fr&units=metric&lang=fr&appid=${apiKey}`;
 		
 		function goBack() {
@@ -371,8 +371,8 @@
         function sharePage() {
             if (navigator.share) {
                 navigator.share({
-                    title: 'Météo à Crozon',
-                    text: 'Découvrez les prévisions météorologiques à Crozon !',
+                    title: 'Météo à Biarritz',
+                    text: 'Découvrez les prévisions météorologiques à Biarritz !',
                     url: window.location.href,
                 }).catch((error) => console.error('Erreur de partage', error));
             } else {
@@ -610,7 +610,7 @@
 		
 		async function updateTemperature() {
 			const apiKey = "d518ee1f87290e7100d335782f048bd5"; // Remplacez par votre clé API
-			const city = "Crozon"; // Nom de la ville
+			const city = "biarritz"; // Nom de la ville
 			const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=fr`;
 
 			try {
