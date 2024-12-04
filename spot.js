@@ -1,4 +1,4 @@
-r	function getSiteByCity(city) {
+	function getSiteByCity(city) {
             const sitesDatabase = {
                 "vannes": "meteohossegor.html",
                 "la torche": "LaTorche.html",
