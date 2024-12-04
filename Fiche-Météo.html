@@ -39,39 +39,12 @@
             margin-top: 50px;
         }
     </style>
-</head>
-<body>
 	<div id="corps">
-		<h1>Heure actuelle</h1>
-		<div id="horloge"></div>
-
-    <script>
-        function afficherHeure() {
-            const maintenant = new Date();
-            const heures = String(maintenant.getHours()).padStart(2, '0');
-            const minutes = String(maintenant.getMinutes()).padStart(2, '0');
-            const secondes = String(maintenant.getSeconds()).padStart(2, '0');
-            document.getElementById('horloge').textContent = `${heures}:${minutes}:${secondes}`;
-        }
-
-        // Mettre à jour l'heure toutes les secondes
-        setInterval(afficherHeure, 1000);
-
-        // Afficher l'heure immédiatement au chargement
-        afficherHeure();
-    </script>
-	
-	
 	<iframe width="1150" height="500" src="carteinteractive.html" title="Carte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-	
-	
-	
-	
-	<div id="footer2">
-	<p>©SurFrance2024</p>
-	<div id="footer2">
+		
 
-
+</body>
+</html>
 
 
 
