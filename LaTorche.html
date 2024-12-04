@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo à Plomeur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px; /* Ajuster la marge pour centrer correctement */
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1200px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prévisions météorologiques à Plomeur (La Torche)</h1>
+        <table id="weather-table">
+            <thead>
+                <tr id="header-row">
+                    <th>Type d'Information</th>
+                    <!-- Les heures seront ajoutées ici -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" id="loading">Chargement des prévisions...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const apiKey = "d518ee1f87290e7100d335782f048bd5"; // Votre clé API
+        const city = "Plomeur"; // Changer la ville ici
+        const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city},fr&units=metric&lang=fr&appid=${apiKey}`;
+
+        async function fetchWeather() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error("Impossible de récupérer les données météo.");
+                const data = await response.json();
+                
+                const forecastList = data.list; // Liste des prévisions toutes les 3 heures
+                const tableBody = document.getElementById("weather-table").getElementsByTagName('tbody')[0];
+                const tableHeader = document.getElementById("header-row");
+
+                // On vide la ligne de chargement
+                tableBody.innerHTML = "";
+
+                // Ajouter les heures en haut du tableau
+                let headerRow = "<th>Type d'Information</th>"; // Titre de la première colonne
+                forecastList.forEach((forecast) => {
+                    const date = new Date(forecast.dt * 1000);
+                    const hour = date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+                    headerRow += `<th>${hour}`; // Ajouter une colonne pour chaque heure
+                });
+                tableHeader.innerHTML = headerRow;
+
+                // Créer les lignes pour chaque type d'information (température, description, etc.)
+                const infoTypes = ["Température (°C)", "Description", "Vitesse du Vent (m/s)", "Direction du Vent (°)", "Humidité (%)"];
+
+                // Remplir les informations dans le tableau
+                infoTypes.forEach((infoType) => {
+                    const row = document.createElement("tr");
+                    const infoTypeCell = document.createElement("td");
+                    infoTypeCell.textContent = infoType;
+                    row.appendChild(infoTypeCell);
+
+                    forecastList.forEach((forecast) => {
+                        let cell;
+                        switch (infoType) {
+                            case "Température (°C)":
+                                cell = `<td>${forecast.main.temp}`;
+                                break;
+                            case "Description":
+                                cell = `<td>${forecast.weather[0].description}`;
+                                break;
+                            case "Vitesse du Vent (m/s)":
+                                cell = `<td>${forecast.wind.speed}`;
+                                break;
+                            case "Direction du Vent (°)":
+                                cell = `<td>${forecast.wind.deg}`;
+                                break;
+                            case "Humidité (%)":
+                                cell = `<td>${forecast.main.humidity}`;
+                                break;
+                        }
+                        row.innerHTML += cell;
+                    });
+                    tableBody.appendChild(row);
+                });
+
+            } catch (error) {
+                document.getElementById("loading").innerHTML = `<span class="error">${error.message}`;
+            }
+        }
+
+        fetchWeather();
+    </script>
+</body>
+</html>
+
