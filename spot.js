@@ -4,7 +4,7 @@
                 "la torche": "LaTorche.html",
                 "crozon": "meteocrozon.html",
                 "biarritz": "meteobiarritz.html",
-                "bordeaux": "https://www.bordeaux-tourisme.com"
+                "lorient": "meteolorient.html"
                 // Ajoutez d'autres villes ici
             };
             return sitesDatabase[city.toLowerCase()] || null;
