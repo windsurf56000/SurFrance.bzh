@@ -2,7 +2,7 @@
             const sitesDatabase = {
                 "vannes": "meteospot/meteohossegor.html",
                 "la torche": "meteospot/LaTorche.html",
-                "nice": "https://www.nicetourisme.com",
+                "crozon": "meteocrozon.html",
                 "lyon": "https://www.lyon-france.com",
                 "bordeaux": "https://www.bordeaux-tourisme.com"
                 // Ajoutez d'autres villes ici
